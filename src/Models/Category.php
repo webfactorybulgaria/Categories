@@ -38,15 +38,6 @@ class Category extends Base
     protected $appends = ['status', 'title', 'thumb'];
 
     /**
-     * Columns that are file.
-     *
-     * @var array
-     */
-    public $attachments = [
-        'image',
-    ];
-
-    /**
      * Relations.
      */
     public function projects()
