@@ -9,7 +9,7 @@ class PublicController extends BasePublicController
 {
     public function __construct(CategoryInterface $category)
     {
-        parent::__construct($category);
+        parent::__construct($category, 'categories');
     }
 
     /**
