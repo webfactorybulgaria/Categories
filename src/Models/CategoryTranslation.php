@@ -11,6 +11,6 @@ class CategoryTranslation extends BaseTranslation
      */
     public function owner()
     {
-        return $this->belongsTo('TypiCMS\Modules\Categories\Models\Category', 'category_id');
+        return $this->belongsTo('TypiCMS\Modules\Categories\Models\Category', 'category_id')->withoutGlobalScopes();
     }
 }

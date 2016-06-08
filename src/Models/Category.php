@@ -2,7 +2,7 @@
 
 namespace TypiCMS\Modules\Categories\Models;
 
-use Dimsav\Translatable\Translatable;
+use TypiCMS\Modules\Core\Traits\Translatable;
 use Laracasts\Presenter\PresentableTrait;
 use TypiCMS\Modules\Core\Models\Base;
 use TypiCMS\Modules\History\Traits\Historable;
@@ -35,7 +35,7 @@ class Category extends Base
         'status',
     ];
 
-    protected $appends = ['status', 'title', 'thumb'];
+    protected $appends = ['thumb'];
 
     /**
      * Relations.
