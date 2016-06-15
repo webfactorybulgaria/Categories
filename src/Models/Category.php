@@ -44,4 +44,14 @@ class Category extends Base
     {
         return $this->hasMany('TypiCMS\Modules\Projects\Models\Project')->order();
     }
+
+    /**
+     * Append thumb attribute.
+     *
+     * @return string
+     */
+    public function getThumbAttribute()
+    {
+        return $this->present()->thumbSrc(null, 22);
+    }
 }
