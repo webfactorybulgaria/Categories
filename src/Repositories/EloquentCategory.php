@@ -41,6 +41,7 @@ class EloquentCategory extends RepositoriesAbstract implements CategoryInterface
         $categories = $this->all();
         $categories->each(function ($category) use ($uri) {
             $category->url = $uri.'/'.$category->slug;
+            $category->items = new Collection;
         });
 
         return $categories;
