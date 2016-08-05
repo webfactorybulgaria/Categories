@@ -3,7 +3,7 @@
 namespace TypiCMS\Modules\Categories\Repositories;
 
 use Illuminate\Database\Eloquent\Collection;
-use TypiCMS\Modules\Core\Repositories\RepositoryInterface;
+use TypiCMS\Modules\Core\Custom\Repositories\RepositoryInterface;
 
 interface CategoryInterface extends RepositoryInterface
 {

@@ -2,7 +2,7 @@
 
 namespace TypiCMS\Modules\Categories\Models;
 
-use TypiCMS\Modules\Core\Models\BaseTranslation;
+use TypiCMS\Modules\Core\Custom\Models\BaseTranslation;
 
 class CategoryTranslation extends BaseTranslation
 {
@@ -11,6 +11,6 @@ class CategoryTranslation extends BaseTranslation
      */
     public function owner()
     {
-        return $this->belongsTo('TypiCMS\Modules\Categories\Models\Category', 'category_id')->withoutGlobalScopes();
+        return $this->belongsTo('TypiCMS\Modules\Categories\Custom\Models\Category', 'category_id')->withoutGlobalScopes();
     }
 }

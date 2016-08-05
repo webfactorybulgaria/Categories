@@ -5,13 +5,13 @@ namespace TypiCMS\Modules\Categories\Providers;
 use Illuminate\Foundation\AliasLoader;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\ServiceProvider;
-use TypiCMS\Modules\Categories\Models\Category;
-use TypiCMS\Modules\Categories\Models\CategoryTranslation;
-use TypiCMS\Modules\Categories\Repositories\CacheDecorator;
-use TypiCMS\Modules\Categories\Repositories\EloquentCategory;
-use TypiCMS\Modules\Core\Observers\FileObserver;
-use TypiCMS\Modules\Core\Observers\SlugObserver;
-use TypiCMS\Modules\Core\Services\Cache\LaravelCache;
+use TypiCMS\Modules\Categories\Custom\Models\Category;
+use TypiCMS\Modules\Categories\Custom\Models\CategoryTranslation;
+use TypiCMS\Modules\Categories\Custom\Repositories\CacheDecorator;
+use TypiCMS\Modules\Categories\Custom\Repositories\EloquentCategory;
+use TypiCMS\Modules\Core\Custom\Observers\FileObserver;
+use TypiCMS\Modules\Core\Custom\Observers\SlugObserver;
+use TypiCMS\Modules\Core\Custom\Services\Cache\LaravelCache;
 
 class ModuleProvider extends ServiceProvider
 {
@@ -36,7 +36,7 @@ class ModuleProvider extends ServiceProvider
 
         AliasLoader::getInstance()->alias(
             'Categories',
-            'TypiCMS\Modules\Categories\Facades\Facade'
+            'TypiCMS\Modules\Categories\Custom\Facades\Facade'
         );
 
         // Observers
@@ -51,14 +51,14 @@ class ModuleProvider extends ServiceProvider
         /*
          * Register route service provider
          */
-        $app->register('TypiCMS\Modules\Categories\Providers\RouteServiceProvider');
+        $app->register('TypiCMS\Modules\Categories\Custom\Providers\RouteServiceProvider');
 
         /*
          * Sidebar view composer
          */
-        $app->view->composer('core::admin._sidebar', 'TypiCMS\Modules\Categories\Composers\SidebarViewComposer');
+        $app->view->composer('core::admin._sidebar', 'TypiCMS\Modules\Categories\Custom\Composers\SidebarViewComposer');
 
-        $app->bind('TypiCMS\Modules\Categories\Repositories\CategoryInterface', function (Application $app) {
+        $app->bind('TypiCMS\Modules\Categories\Custom\Repositories\CategoryInterface', function (Application $app) {
             $repository = new EloquentCategory(new Category());
             if (!config('typicms.cache')) {
                 return $repository;
