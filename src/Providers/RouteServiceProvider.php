@@ -5,7 +5,7 @@ namespace TypiCMS\Modules\Categories\Providers;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 use Illuminate\Routing\Router;
 use Illuminate\Support\Facades\Request;
-use TypiCMS\Modules\Categories\Custom\Repositories\CategoryInterface;
+use TypiCMS\Modules\Categories\Shells\Repositories\CategoryInterface;
 
 class RouteServiceProvider extends ServiceProvider
 {
@@ -16,7 +16,7 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @var string
      */
-    protected $namespace = 'TypiCMS\Modules\Categories\Custom\Http\Controllers';
+    protected $namespace = 'TypiCMS\Modules\Categories\Shells\Http\Controllers';
 
     /**
      * Define your route model bindings, pattern filters, etc.

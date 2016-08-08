@@ -2,10 +2,10 @@
 
 namespace TypiCMS\Modules\Categories\Models;
 
-use TypiCMS\Modules\Core\Custom\Traits\Translatable;
+use TypiCMS\Modules\Core\Shells\Traits\Translatable;
 use Laracasts\Presenter\PresentableTrait;
-use TypiCMS\Modules\Core\Custom\Models\Base;
-use TypiCMS\Modules\History\Custom\Traits\Historable;
+use TypiCMS\Modules\Core\Shells\Models\Base;
+use TypiCMS\Modules\History\Shells\Traits\Historable;
 
 class Category extends Base
 {
@@ -13,7 +13,7 @@ class Category extends Base
     use Translatable;
     use PresentableTrait;
 
-    protected $presenter = 'TypiCMS\Modules\Categories\Custom\Presenters\ModulePresenter';
+    protected $presenter = 'TypiCMS\Modules\Categories\Shells\Presenters\ModulePresenter';
 
     protected $fillable = [
         'position',
@@ -42,7 +42,7 @@ class Category extends Base
      */
     public function projects()
     {
-        return $this->hasMany('TypiCMS\Modules\Projects\Custom\Models\Project')->order();
+        return $this->hasMany('TypiCMS\Modules\Projects\Shells\Models\Project')->order();
     }
 
     /**
