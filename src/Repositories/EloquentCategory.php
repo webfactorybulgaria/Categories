@@ -4,7 +4,7 @@ namespace TypiCMS\Modules\Categories\Repositories;
 
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
-use TypiCMS\Modules\Core\Repositories\RepositoriesAbstract;
+use TypiCMS\Modules\Core\Shells\Repositories\RepositoriesAbstract;
 
 class EloquentCategory extends RepositoriesAbstract implements CategoryInterface
 {
@@ -41,6 +41,7 @@ class EloquentCategory extends RepositoriesAbstract implements CategoryInterface
         $categories = $this->all();
         $categories->each(function ($category) use ($uri) {
             $category->url = $uri.'/'.$category->slug;
+            $category->items = new Collection;
         });
 
         return $categories;
