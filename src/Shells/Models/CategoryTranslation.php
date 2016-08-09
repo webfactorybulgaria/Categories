@@ -2,9 +2,9 @@
 
 namespace TypiCMS\Modules\Categories\Shells\Models;
 
-use TypiCMS\Modules\Categories\Models\CategoryTranslation as Base;
+use TypiCMS\Modules\Categories\Models\CategoryTranslation as BaseClass;
 
-class CategoryTranslation extends Base
+class CategoryTranslation extends BaseClass
 {
 
 }

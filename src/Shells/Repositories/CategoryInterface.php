@@ -2,9 +2,9 @@
 
 namespace TypiCMS\Modules\Categories\Shells\Repositories;
 
-use TypiCMS\Modules\Categories\Repositories\CategoryInterface as Base;
+use TypiCMS\Modules\Categories\Repositories\CategoryInterface as BaseInterface;
 
-interface CategoryInterface extends Base
+interface CategoryInterface extends BaseInterface
 {
 
 }

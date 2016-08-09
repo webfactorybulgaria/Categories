@@ -2,9 +2,9 @@
 
 namespace TypiCMS\Modules\Categories\Shells\Repositories;
 
-use TypiCMS\Modules\Categories\Repositories\EloquentCategory as Base;
+use TypiCMS\Modules\Categories\Repositories\EloquentCategory as BaseClass;
 
-class EloquentCategory extends Base implements CategoryInterface
+class EloquentCategory extends BaseClass implements CategoryInterface
 {
 
 }
