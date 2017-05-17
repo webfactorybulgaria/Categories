@@ -2,10 +2,10 @@
 
 namespace TypiCMS\Modules\Categories\Providers;
 
-use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 use Illuminate\Routing\Router;
 use Illuminate\Support\Facades\Request;
 use TypiCMS\Modules\Categories\Shells\Repositories\CategoryInterface;
+use TypiCMS\Modules\Core\Shells\Providers\BaseRouteServiceProvider as ServiceProvider;
 
 class RouteServiceProvider extends ServiceProvider
 {
